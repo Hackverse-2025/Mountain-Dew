@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Roadmap Generator</title>
+    <link rel="stylesheet" href="roadmap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <button class="back-button" onclick="history.back()"><i class="fas fa-arrow-left"></i> Back</button>
+        <nav class="nav-bar">
+            <!-- Minimalist Navigation Bar -->
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>AI Roadmap Generator</h1>
+        <p>Personalized career and project roadmaps powered by AI.</p>
+        <button class="cta-button" onclick="document.getElementById('userInputForm').scrollIntoView()">Start Building Your Roadmap</button>
+    </section>
+
+    <!-- User Input Form -->
+    <section id="userInputForm" class="user-input-form">
+        <form>
+            <!-- Basic Details -->
+            <div class="form-section">
+                <h2>Basic Details</h2>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="ageGroup">Age Group</label>
+                <select id="ageGroup" name="ageGroup">
+                    <option value="<18"><18</option>
+                    <option value="18-25">18-25</option>
+                    <option value="26-35">26-35</option>
+                    <option value="36-50">36-50</option>
+                    <option value="50+">50+</option>
+                </select>
+                <label>Preferred Learning Style</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="learningStyle" value="Visual"> Visual</label>
+                    <label><input type="checkbox" name="learningStyle" value="Text-based"> Text-based</label>
+                    <label><input type="checkbox" name="learningStyle" value="Hands-on"> Hands-on</label>
+                    <label><input type="checkbox" name="learningStyle" value="Discussion"> Discussion</label>
+                </div>
+            </div>
+
+            <!-- Goals & Aspirations -->
+            <div class="form-section">
+                <h2>Goals & Aspirations</h2>
+                <label for="longTermGoals">Long-term Goals</label>
+                <input type="text" id="longTermGoals" name="longTermGoals">
+                <label for="shortTermGoals">Short-term Goals</label>
+                <input type="text" id="shortTermGoals" name="shortTermGoals">
+                <label for="careerInterests">Career Interests</label>
+                <select id="careerInterests" name="careerInterests">
+                    <option value="AI">AI</option>
+                    <option value="Web Dev">Web Dev</option>
+                    <option value="Cybersecurity">Cybersecurity</option>
+                    <!-- Add more options as needed -->
+                </select>
+                <label for="hobbies">Hobbies & Interests</label>
+                <input type="text" id="hobbies" name="hobbies">
+                <label for="industries">Industries of Interest</label>
+                <input type="text" id="industries" name="industries">
+            </div>
+
+            <!-- Skills & Experience -->
+            <div class="form-section">
+                <h2>Skills & Experience</h2>
+                <label for="skillLevel">Current Skill Level</label>
+                <select id="skillLevel" name="skillLevel">
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+                <label for="languages">Known Programming Languages</label>
+                <input type="text" id="languages" name="languages">
+                <label for="projects">Past Projects or Work Experience</label>
+                <input type="text" id="projects" name="projects">
+                <label for="certifications">Certifications or Courses Completed</label>
+                <input type="text" id="certifications" name="certifications">
+                <label for="commitment">Learning Commitment Per Week</label>
+                <select id="commitment" name="commitment">
+                    <option value="<5hrs"><5hrs</option>
+                    <option value="5-10hrs">5-10hrs</option>
+                    <option value="10+hrs">10+hrs</option>
+                </select>
+            </div>
+
+            <!-- Learning Preferences -->
+            <div class="form-section">
+                <h2>Learning Preferences</h2>
+                <label>Preferred Learning Platforms</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="platforms" value="Coursera"> Coursera</label>
+                    <label><input type="checkbox" name="platforms" value="Udemy"> Udemy</label>
+                    <label><input type="checkbox" name="platforms" value="Books"> Books</label>
+                    <label><input type="checkbox" name="platforms" value="YouTube"> YouTube</label>
+                </div>
+                <label for="budget">Budget for Learning Resources</label>
+                <select id="budget" name="budget">
+                    <option value="Free">Free</option>
+                    <option value="<50"><$50</option>
+                    <option value="50-200">$50-$200</option>
+                    <option value="No limit">No limit</option>
+                </select>
+                <label for="roadmapType">Preferred Roadmap Type</label>
+                <select id="roadmapType" name="roadmapType">
+                    <option value="Self-paced">Self-paced</option>
+                    <option value="Structured Plan">Structured Plan</option>
+                    <option value="Intense Bootcamp">Intense Bootcamp</option>
+                </select>
+                <label for="collaboration">Collaboration Interest</label>
+                <select id="collaboration" name="collaboration">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <!-- Custom User Input -->
+            <div class="form-section">
+                <h2>Custom User Input (Optional)</h2>
+                <label for="additionalInfo">Additional Information or Requests</label>
+                <input type="text" id="additionalInfo" name="additionalInfo">
+                <label for="customMilestones">Custom Milestones</label>
+                <input type="text" id="customMilestones" name="customMilestones">
+            </div>
+
+            <button type="submit" class="submit-button">Generate Roadmap</button>
+        </form>
+    </section>
+
+    <!-- AI-Generated Roadmap -->
+    <section id="roadmap" class="roadmap">
+        <h2>Your AI-Generated Roadmap</h2>
+        <div class="roadmap-content">
+            <!-- Roadmap content will be dynamically generated here -->
+        </div>
+    </section>
+
+    <!-- Call-to-Action -->
+    <section class="cta">
+        <h2>Take the Next Step Towards Your Future!</h2>
+        <button class="cta-button" onclick="document.getElementById('userInputForm').scrollIntoView()">Generate Another Roadmap</button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <p>© 2025 Mountain Dew AI</p>
+        </div>
+    </footer>
+
+    <script src="roadmap.js"></script>
+</body>
+</html>
